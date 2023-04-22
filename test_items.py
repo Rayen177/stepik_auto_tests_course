@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -12,6 +14,7 @@ def should_be_element(browser):
 def test_page_contains_adding_button(browser):
     link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207'
     browser.get(link)
+    time.sleep(30)
     element = should_be_element(browser)
     assert element, 'Element button to add book to basket was not found'
 
